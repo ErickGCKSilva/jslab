@@ -119,20 +119,33 @@ console.log("JavaScript carregado com sucesso!");
 
 // console.log(`${verificarSituacao(nota, frequencia)}`);
 
-function calcularMedia(
-    nota1,
-    nota2,
-    nota3
-) {
-    const total =
-        nota1 + nota2 + nota3;
+// function calcularMedia(
+//     nota1,
+//     nota2,
+//     nota3
+// ) {
+//     const total =
+//         nota1 + nota2 + nota3;
 
-    const media =
-        total / 3;
+//     const media =
+//         total / 3;
 
-    return media;
-}
+//     return media;
+// }
 
-console.log(
-    calcularMedia(70, 80, 90)
-);
+// console.log(
+//     calcularMedia(70, 80, 90)
+// );
+
+// Desafio Tabuada
+
+// function exibirTabuada(numero) {
+//     for(let i = 1; i < 11; i++) {
+//         const tabuada = numero*i;
+//         console.log(`${numero} x ${i}: ${tabuada}`);
+//     }
+// }
+
+// const numero = 50;
+
+// exibirTabuada(numero);
