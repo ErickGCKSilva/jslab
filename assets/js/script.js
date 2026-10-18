@@ -62,6 +62,14 @@ if (valor>=100){
     qtddesconto = 0;
 }
 
+if (prioridade === "alta" && atrasado === true) {
+    console.log("===STATUS DO PEDIDO===");
+    console.log("ATENÇÃO IMEDIATA")
+} else {
+    console.log("===STATUS DO PEDIDO===");
+    console.log("ACOMPANHAMENTO NORMAL")
+}
+
 desconto = valor*(qtddesconto/100);
 valorfinal = valor - desconto
 
