@@ -93,3 +93,28 @@ console.log("JavaScript carregado com sucesso!");
 //     console.log(`${contagem}`);
 //     contagem -=1;
 // }
+
+//Exercício 23
+// function calcularDesconto(valor, percentual) {
+//     return valor*(percentual/100);
+// }
+
+// const valor = 1000;
+// const percentual = 25;
+
+// console.log(`${calcularDesconto(valor, percentual)}`);
+
+//Exercício 26
+
+// function verificarSituacao(nota, frequencia) {
+//     if (nota>=60 && frequencia>=75 ){
+//         return "Aluno aprovado!"
+//     } else {
+//         return "Aluno reprovado!"
+//     }
+// }
+
+// const nota = 60;
+// const frequencia = 50;
+
+// console.log(`${verificarSituacao(nota, frequencia)}`);
