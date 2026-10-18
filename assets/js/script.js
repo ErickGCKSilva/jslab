@@ -45,35 +45,35 @@ console.log("JavaScript carregado com sucesso!");
 
 //Desafio Final
 
-const cliente = "Erick";
-const valor = 105;
-const prioridade = "alta"
-const atrasado = false;
-let qtddesconto;
-let valorfinal;
-let desconto;
+// const cliente = "Erick";
+// const valor = 105;
+// const prioridade = "alta"
+// const atrasado = false;
+// let qtddesconto;
+// let valorfinal;
+// let desconto;
 
 
-if (valor>=100){
-    qtddesconto = 10;
-} else if (valor>=200) {
-    qtddesconto = 20;
-} else {
-    qtddesconto = 0;
-}
+// if (valor>=200){
+//     qtddesconto = 20;
+// } else if (valor>=100 && valor<200) {
+//     qtddesconto = 10;
+// } else {
+//     qtddesconto = 0;
+// }
 
-if (prioridade === "alta" && atrasado === true) {
-    console.log("===STATUS DO PEDIDO===");
-    console.log("ATENÇÃO IMEDIATA")
-} else {
-    console.log("===STATUS DO PEDIDO===");
-    console.log("ACOMPANHAMENTO NORMAL")
-}
+// if (prioridade === "alta" && atrasado === true) {
+//     console.log("===STATUS DO PEDIDO===");
+//     console.log("ATENÇÃO IMEDIATA")
+// } else {
+//     console.log("===STATUS DO PEDIDO===");
+//     console.log("ACOMPANHAMENTO NORMAL")
+// }
 
-desconto = valor*(qtddesconto/100);
-valorfinal = valor - desconto
+// desconto = valor*(qtddesconto/100);
+// valorfinal = valor - desconto
 
-console.log(`Nome do Cliente: ${cliente}`)
-console.log(`Valor do produto: R$${valor.toFixed(2)}`);
-console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
-console.log(`Valor final: R$${valorfinal.toFixed(2)}`);
+// console.log(`Nome do Cliente: ${cliente}`)
+// console.log(`Valor do produto: R$${valor.toFixed(2)}`);
+// console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
+// console.log(`Valor final: R$${valorfinal.toFixed(2)}`);
