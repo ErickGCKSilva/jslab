@@ -73,6 +73,7 @@ if (prioridade === "alta" && atrasado === true) {
 desconto = valor*(qtddesconto/100);
 valorfinal = valor - desconto
 
-console.log(`Valor do produto: R${valor.toFixed(2)}`);
-console.log(`Valor do desconto: R${desconto.toFixed(2)}`);
-console.log(`Valor final: R${valorfinal.toFixed(2)}`);
+console.log(`Nome do Cliente: ${cliente}`)
+console.log(`Valor do produto: R$${valor.toFixed(2)}`);
+console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
+console.log(`Valor final: R$${valorfinal.toFixed(2)}`);
