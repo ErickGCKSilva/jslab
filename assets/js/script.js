@@ -1,22 +1,44 @@
 console.log("JavaScript carregado com sucesso!");
 
-const nome = "laranjas";
-const preco = 2.99;
-let quantidade;
-let desconto = 5;
-const disponibilidade = 1000;
+//Exercício 22
+// const nome = "laranjas";
+// const preco = 2.99;
+// let quantidade;
+// let desconto = 5;
+// const disponibilidade = 1000;
 
-quantidade = +prompt("Digite a quandidade de laranjas: ");
-const subtotal = preco*quantidade;
-desconto = subtotal*(desconto/100);
-const vlrfinal = subtotal - desconto;
+// quantidade = +prompt("Digite a quandidade de laranjas: ");
+// const subtotal = preco*quantidade;
+// desconto = subtotal*(desconto/100);
+// const vlrfinal = subtotal - desconto;
 
 
-console.log(`Produto: ${nome}`);
-console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
-console.log(`Valor final: R$${vlrfinal.toFixed(2)}`);
+// console.log(`Produto: ${nome}`);
+// console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
+// console.log(`Valor final: R$${vlrfinal.toFixed(2)}`);
 
-console.log(typeof subtotal);
-console.log(typeof desconto);
-console.log(typeof nome);
+// console.log(typeof subtotal);
+// console.log(typeof desconto);
+// console.log(typeof nome);
 
+//Exercício 28
+// const prioridade = "alta";
+// const atrasado = false;
+
+// if (prioridade === "alta" && atrasado === true) {
+//     console.log("ATENÇÃO IMEDIATA");
+// } else {
+//     console.log("Acomapnhamento normal");
+// }
+
+
+// Exercício 29
+// const idade = 17
+// const possuiCadastro =  true
+// const bloqueado = false;
+
+// if (idade >= 18 && possuiCadastro === true && bloqueado === false){
+//     console.log("Acesso liberado")
+// }   else {
+//     console.log("Acesso negado")
+// }
