@@ -118,3 +118,21 @@ console.log("JavaScript carregado com sucesso!");
 // const frequencia = 50;
 
 // console.log(`${verificarSituacao(nota, frequencia)}`);
+
+function calcularMedia(
+    nota1,
+    nota2,
+    nota3
+) {
+    const total =
+        nota1 + nota2 + nota3;
+
+    const media =
+        total / 3;
+
+    return media;
+}
+
+console.log(
+    calcularMedia(70, 80, 90)
+);
