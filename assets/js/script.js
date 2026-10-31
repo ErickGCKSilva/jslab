@@ -1,151 +1,72 @@
 console.log("JavaScript carregado com sucesso!");
 
-//Exercício 22
-// const nome = "laranjas";
-// const preco = 2.99;
-// let quantidade;
-// let desconto = 5;
-// const disponibilidade = 1000;
+// Arrays
 
-// quantidade = +prompt("Digite a quandidade de laranjas: ");
-// const subtotal = preco*quantidade;
-// desconto = subtotal*(desconto/100);
-// const vlrfinal = subtotal - desconto;
+// const categorias = [
+//     "Infraestrutura",
+//     "Software",
+//     "Hardware",
+//     "Rede"
+// ];
 
 
-// console.log(`Produto: ${nome}`);
-// console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
-// console.log(`Valor final: R$${vlrfinal.toFixed(2)}`);
+// categorias.forEach(categoria => {
+//     console.log(categoria);
+// });
 
-// console.log(typeof subtotal);
-// console.log(typeof desconto);
-// console.log(typeof nome);
+// Objetos
 
-//Exercício 28
-// const prioridade = "alta";
-// const atrasado = false;
+// const pedido = {
+//     id: 67,
+//     situacao: "Fazendo",
+//     local: "Aqui",
+//     prioridade: "Alta"
+// };
+// pedido.id = 6767;
 
-// if (prioridade === "alta" && atrasado === true) {
-//     console.log("ATENÇÃO IMEDIATA");
-// } else {
-//     console.log("Acomapnhamento normal");
-// }
+// console.log(pedido);
 
+//Arrays de Objetos
 
-// Exercício 29
-// const idade = 17
-// const possuiCadastro =  true
-// const bloqueado = false;
+const pedidos = [
+    {
+        id: 1042,
+        cliente: "Clínica Central",
+        prioridade: "alta",
+        status: "atendimento",
+        valor: 850
+    },
+    {
+        id: 1043,
+        cliente: "Loja Horizonte",
+        prioridade: "normal",
+        status: "aberto",
+        valor: 420
+    },
+    {
+        id: 1044,
+        cliente: "Escritório Almeida",
+        prioridade: "urgente",
+        status: "aberto",
+        valor: 1200
+    }
+];
 
-// if (idade >= 18 && possuiCadastro === true && bloqueado === false){
-//     console.log("Acesso liberado")
-// }   else {
-//     console.log("Acesso negado")
-// }
+pedidos.forEach(pedido => {
+    console.log(`Número do pedido: ${pedido.id} Valor: ${pedido.valor}`);
+});
 
-//Desafio Final
+//comparação de valores
 
-// const cliente = "Erick";
-// const valor = 105;
-// const prioridade = "alta"
-// const atrasado = false;
-// let qtddesconto;
-// let valorfinal;
-// let desconto;
+let maior_valor = pedidos[0].id;
+let nome = pedidos[0].cliente;
 
+pedidos.forEach(elemento=>{
 
-// if (valor>=100){
-//     qtddesconto = 10;
-// } else if (valor>=200) {
-//     qtddesconto = 20;
-// } else {
-//     qtddesconto = 0;
-// }
+    if (elemento.valor> maior_valor){
+        maior_valor = elemento.valor;
+        nome = elemento.cliente;
+    }
+});
 
-// if (prioridade === "alta" && atrasado === true) {
-//     console.log("===STATUS DO PEDIDO===");
-//     console.log("ATENÇÃO IMEDIATA")
-// } else {
-//     console.log("===STATUS DO PEDIDO===");
-//     console.log("ACOMPANHAMENTO NORMAL")
-// }
-
-// desconto = valor*(qtddesconto/100);
-// valorfinal = valor - desconto
-
-// console.log(`Nome do Cliente: ${cliente}`)
-// console.log(`Valor do produto: R$${valor.toFixed(2)}`);
-// console.log(`Valor do desconto: R$${desconto.toFixed(2)}`);
-// console.log(`Valor final: R$${valorfinal.toFixed(2)}`);
-
-// Fudamentos parte 2
-// Exercício 12
-
-// const quantidadePedidos = 8;
-
-// for (let i = 0; i<quantidadePedidos; i++){
-//     console.log(`Processando pedido ${i+1}`);
-// }
-
-// let contagem = 10;
-
-// while(contagem>0){
-//     console.log(`${contagem}`);
-//     contagem -=1;
-// }
-
-//Exercício 23
-// function calcularDesconto(valor, percentual) {
-//     return valor*(percentual/100);
-// }
-
-// const valor = 1000;
-// const percentual = 25;
-
-// console.log(`${calcularDesconto(valor, percentual)}`);
-
-//Exercício 26
-
-// function verificarSituacao(nota, frequencia) {
-//     if (nota>=60 && frequencia>=75 ){
-//         return "Aluno aprovado!"
-//     } else {
-//         return "Aluno reprovado!"
-//     }
-// }
-
-// const nota = 60;
-// const frequencia = 50;
-
-// console.log(`${verificarSituacao(nota, frequencia)}`);
-
-// function calcularMedia(
-//     nota1,
-//     nota2,
-//     nota3
-// ) {
-//     const total =
-//         nota1 + nota2 + nota3;
-
-//     const media =
-//         total / 3;
-
-//     return media;
-// }
-
-// console.log(
-//     calcularMedia(70, 80, 90)
-// );
-
-// Desafio Tabuada
-
-// function exibirTabuada(numero) {
-//     for(let i = 1; i < 11; i++) {
-//         const tabuada = numero*i;
-//         console.log(`${numero} x ${i}: ${tabuada}`);
-//     }
-// }
-
-// const numero = 50;
-
-// exibirTabuada(numero);
+console.log(`O pedido mais caro do cliente: ${nome}, com R$${maior_valor.toFixed(2)}`);
