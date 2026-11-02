@@ -79,22 +79,57 @@ function renderizarPedidos(listaPedidos) {
             "#lista-pedidos"
         );
 
+    lista.addEventListener(
+        "click",
+        event => {
+
+            const botao =
+                event.target.closest(
+                    "[data-acao]"
+                );
+
+            if (!botao) {
+                return;
+            }
+
+            console.log(botao.dataset);
+        }
+    );
+
     lista.textContent = "";
 
-            if (listaPedidos.length === 0){
+    if (listaPedidos.length === 0) {
 
-            const aviso = document.createElement("h3");
-            aviso.textContent = "Nenhum pedido encontrado!";      
-            lista.append(aviso);
-            return
-        }
+        const aviso = document.createElement("h3");
+        aviso.textContent = "Nenhum pedido encontrado!";
+        lista.append(aviso);
+        return;
+    }
 
     listaPedidos.forEach(pedido => {
 
         const artigo = document.createElement("article");
 
         const titulo = document.createElement("h3");
+
+        const botao = document.createElement("button");
+        botao.textContent = "Ver detalhes";
+
+        botao.dataset.id = pedido.id;
+        botao.dataset.acao = "detalhes";
+
+        botao.addEventListener(
+            "click",
+            () => {
+                const id =
+                    Number(botao.dataset.id);
+                console.log("Botão clicado");
+            }
+        );
+
+
         titulo.textContent = `PS-${pedido.id}`;
+        botao.dataset.id = pedido.id;
 
         const client = document.createElement("p");
         client.textContent = `Nome do cliente: ${pedido.cliente}`;
@@ -111,7 +146,7 @@ function renderizarPedidos(listaPedidos) {
         const val = document.createElement("p");
         val.textContent = `Valor: ${formatoMoeda.format(pedido.valor)}`;
 
-        artigo.append(titulo, client, category, prioridad, stats, val);
+        artigo.append(titulo, client, category, prioridad, stats, val, botao);
 
         lista.append(artigo);
 
@@ -119,3 +154,22 @@ function renderizarPedidos(listaPedidos) {
 }
 
 renderizarPedidos(pedidos);
+
+const campoBusca = document.querySelector("#campo-busca");
+
+campoBusca.addEventListener("input", () => {
+    // lê o que foi digitado, sem espaços nas pontas e em minúsculas
+    const termo = campoBusca.value.trim().toLowerCase();
+
+    // cria uma lista NOVA só com os pedidos que contêm o termo
+    const resultado = pedidos.filter(pedido =>
+        pedido.cliente.toLowerCase().includes(termo) ||
+        pedido.status.toLowerCase().includes(termo) ||
+        pedido.prioridade.toLowerCase().includes(termo)
+    );
+
+    // desenha só o resultado
+    renderizarPedidos(resultado);
+});
+
+
