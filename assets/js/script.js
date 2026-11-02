@@ -128,6 +128,11 @@ function renderizarPedidos(listaPedidos) {
         );
 
 
+        const link = document.createElement("a");
+        link.textContent = "Ver detalhes";
+        link.href = `href, detalhes.html?id=${pedido.id}`;
+
+
         titulo.textContent = `PS-${pedido.id}`;
         botao.dataset.id = pedido.id;
 
@@ -146,7 +151,7 @@ function renderizarPedidos(listaPedidos) {
         const val = document.createElement("p");
         val.textContent = `Valor: ${formatoMoeda.format(pedido.valor)}`;
 
-        artigo.append(titulo, client, category, prioridad, stats, val, botao);
+        artigo.append(titulo, client, category, prioridad, stats, val, botao, link);
 
         lista.append(artigo);
 
