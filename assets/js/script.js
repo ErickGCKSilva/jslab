@@ -56,6 +56,11 @@ const titulo =
 
 titulo.classList.add("destaque");
 
+const formatoMoeda = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+});
+
 // criar um elemento
 
 const paragrafo = document.createElement("p");
@@ -65,3 +70,52 @@ paragrafo.textContent = "Elemento criado com javascript";
 
 const lista = document.querySelector("#lista-pedidos");
 lista.append(paragrafo)
+
+
+function renderizarPedidos(listaPedidos) {
+
+    const lista =
+        document.querySelector(
+            "#lista-pedidos"
+        );
+
+    lista.textContent = "";
+
+            if (listaPedidos.length === 0){
+
+            const aviso = document.createElement("h3");
+            aviso.textContent = "Nenhum pedido encontrado!";      
+            lista.append(aviso);
+            return
+        }
+
+    listaPedidos.forEach(pedido => {
+
+        const artigo = document.createElement("article");
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = `PS-${pedido.id}`;
+
+        const client = document.createElement("p");
+        client.textContent = `Nome do cliente: ${pedido.cliente}`;
+
+        const category = document.createElement("p");
+        category.textContent = `Categoria: ${pedido.categoria}`;
+
+        const prioridad = document.createElement("p");
+        prioridad.textContent = `Prioridade: ${pedido.prioridade}`;
+
+        const stats = document.createElement("p");
+        stats.textContent = `Status: ${pedido.status}`;
+
+        const val = document.createElement("p");
+        val.textContent = `Valor: ${formatoMoeda.format(pedido.valor)}`;
+
+        artigo.append(titulo, client, category, prioridad, stats, val);
+
+        lista.append(artigo);
+
+    });
+}
+
+renderizarPedidos(pedidos);
